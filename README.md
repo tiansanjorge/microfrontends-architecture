@@ -6,6 +6,21 @@ It focuses on **architecture, modularity, and maintainability** over visual comp
 
 ---
 
+## ⚡ Quick Start
+
+Run the entire architecture locally:
+
+```bash
+npm install
+npm run dev:all
+```
+
+Then open the host application at:
+
+👉 http://localhost:5173
+
+---
+
 ## 🧠 Overview
 
 The application is composed of:
@@ -82,21 +97,6 @@ Key aspects:
 - **Shared library** to avoid duplication
 - **Workspaces (monorepo)** for developer experience
 - **Single command execution** for simplicity
-
----
-
-## ⚡ Quick Start
-
-Run the entire architecture locally:
-
-```bash
-npm install
-npm run dev:all
-```
-
-Then open the host application at:
-
-👉 http://localhost:5173
 
 ---
 
