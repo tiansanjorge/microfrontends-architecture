@@ -41,6 +41,26 @@ Each part is developed and executed independently, enabling separation of concer
 
 ---
 
+## 📁 Repository Structure
+
+This project is organized as a monorepo using workspaces, containing:
+
+- Host application (main-app)
+- Microfrontend: Character List (mfe-character-list)
+- Microfrontend: Character Detail (mfe-character-detail)
+- Shared UI library (tarjeta-lib)
+
+These modules were originally developed as independent repositories and later consolidated into a single monorepo to improve developer experience and simplify local execution.
+
+Original standalone repositories:
+
+- Character List: https://github.com/tiansanjorge/squadmakers-challenge-mfe-character-list
+- Character Detail: https://github.com/tiansanjorge/squadmakers-challenge-mfe-character-detail
+- Shared Library: https://github.com/tiansanjorge/squadmakers-challenge-card-component
+- Host App: https://github.com/tiansanjorge/squadmakers-challenge-main-app
+
+---
+
 ## 📦 Shared Component Library
 
 A custom reusable UI library (`tarjeta-lib`) was designed and built as part of this architecture.
