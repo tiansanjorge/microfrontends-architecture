@@ -121,6 +121,14 @@ It is designed to demonstrate:
 - Modular system design
 - Real-world scalability patterns
 
+## 🔗 Related Project
+
+If you're interested in UI/UX and visual polish, check out this related project where the same domain was explored with a stronger focus on interface design and user experience:
+
+👉 https://rickandmortyexp.netlify.app/
+
+This project, instead, focuses on frontend architecture and system design.
+
 ---
 
 ## 📌 Notes
