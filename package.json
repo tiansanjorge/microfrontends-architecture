@@ -1,0 +1,14 @@
+{
+  "name": "microfrontends-architecture",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:all": "concurrently \"npm run dev --workspace=main-app\" \"npm run dev --workspace=mfe-character-list\" \"npm run dev --workspace=mfe-character-detail\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}

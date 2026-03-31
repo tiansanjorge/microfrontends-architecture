@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "outDir": "./dist",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/components/Tarjeta/Tarjeta.tsx",
+    "src/index.ts",
+    "src/assets/**/*",
+    "src/declarations.d.ts"
+  ],
+  "exclude": ["**/*.test.tsx", "node_modules", "dist"]
+}

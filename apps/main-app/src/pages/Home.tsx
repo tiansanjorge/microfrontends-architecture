@@ -1,0 +1,62 @@
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+export const Home = () => {
+  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <div
+      className="relative min-h-screen bg-cover bg-center sm:bg-[url('/public/portada.jpg')]"
+      style={{
+        backgroundImage: isMobile
+          ? `
+          radial-gradient(
+            70% 35% at 50% 50%,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.8) 100%
+          ),
+          url('/portada.jpg')
+        `
+          : undefined,
+        backgroundBlendMode: isMobile ? "multiply" : undefined,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="absolute inset-0 sm:bg-black sm:bg-opacity-60"></div>
+
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
+        <div className="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 p-8 rounded-xl text-center text-white">
+          <img
+            src="/brand-logo.svg"
+            alt="Rick and Morty logo"
+            className="mx-auto mb-6"
+          />
+          <h2 className="text-2xl font-semibold mb-4">Bienvenido</h2>
+          <p className="mb-6 font-medium w-full mx-auto">
+            App de Rick & Morty con microfrontends, búsqueda y favoritos, usando
+            una librería de componentes propia.
+          </p>
+          <button
+            className="bg-lime-500 hover:bg-lime-600 text-black font-semibold py-2 px-6 rounded-full shadow-md transition"
+            onClick={() => navigate("/characters")}
+          >
+            Comenzar
+          </button>
+          <p className="mt-20">Desarrollado por</p>
+          <p className="text-xl font-bold">Sebastián Sanjorge</p>
+        </div>
+      </div>
+    </div>
+  );
+};
