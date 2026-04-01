@@ -1,8 +1,20 @@
-# 🚀 Microfrontend Architecture – React + Module Federation + Shared UI Library
+# 🚀 Microfrontend Architecture – React + Module Federation + Shared UI
 
-This project demonstrates a **scalable frontend architecture** based on microfrontends using Webpack Module Federation, combined with a **custom-built shared component library designed to decouple UI from application logic**.
+This project demonstrates a minimal microfrontend architecture using Webpack Module Federation, combined with a simple shared UI component.
 
-It focuses on **architecture, modularity, and maintainability** over visual complexity.
+It prioritizes architectural structure and system composition over UI complexity.
+
+---
+
+## ❗ Problem Statement
+
+This project explores how to structure a frontend using microfrontends in a simple, controlled setup.
+
+Instead of focusing on complex UI or business logic, the goal is to understand:
+
+- How microfrontends are composed at runtime
+- How to structure independent frontend applications
+- How to share UI components across application boundaries
 
 ---
 
@@ -10,10 +22,8 @@ It focuses on **architecture, modularity, and maintainability** over visual comp
 
 Run the entire architecture locally:
 
-```bash
-npm install
-npm run dev:all
-```
+    npm install
+    npm run dev:all
 
 Then open the host application at:
 
@@ -23,13 +33,13 @@ Then open the host application at:
 
 ## 🧠 Overview
 
-The application is composed of:
+This is a minimal microfrontend architecture built to demonstrate how independent frontend applications can be composed into a single system.
 
-- **Host application** (main-app)
-- **2 independent microfrontends**
-- **Shared component library**
+The focus is on:
 
-Each part is developed and executed independently, enabling separation of concerns and team scalability.
+- Runtime integration using Module Federation
+- Clear separation between host and remotes
+- Basic shared UI through a reusable component
 
 ---
 
@@ -56,18 +66,18 @@ Each part is developed and executed independently, enabling separation of concer
 
 ---
 
-## 📁 Repository Structure
+## 🗂️ Repository Structure
 
-This project is organized as a monorepo using workspaces, containing:
+This project is organized as a monorepo using workspaces:
 
-- Host application (main-app)
-- Microfrontend: Character List (mfe-character-list)
-- Microfrontend: Character Detail (mfe-character-detail)
-- Shared UI library (tarjeta-lib)
+- `main-app` → Host application
+- `mfe-character-list` → Microfrontend
+- `mfe-character-detail` → Microfrontend
+- `tarjeta-lib` → Shared UI component
 
-These modules were originally developed as independent repositories and later consolidated into a single monorepo to improve developer experience and simplify local execution.
+These modules were originally developed as independent repositories and later consolidated into a monorepo to simplify local development.
 
-Original standalone repositories:
+### Original standalone repositories:
 
 - Character List: https://github.com/tiansanjorge/squadmakers-challenge-mfe-character-list
 - Character Detail: https://github.com/tiansanjorge/squadmakers-challenge-mfe-character-detail
@@ -76,27 +86,39 @@ Original standalone repositories:
 
 ---
 
-## 📦 Shared Component Library
+## 📦 Shared UI Component
 
-A custom reusable UI library (`tarjeta-lib`) was designed and built as part of this architecture.
+A simple reusable UI component (`tarjeta-lib`) is used across microfrontends.
 
-It abstracts UI concerns into a shared layer, allowing microfrontends to remain focused on business logic while ensuring consistency and reusability across the system.
-
-Key aspects:
-
-- Packaged as an independent module
-- Shared via workspace dependency
-- Ensures UI consistency across MFEs
+It demonstrates how UI can be shared between independently developed applications while keeping business logic isolated.
 
 ---
 
 ## ⚙️ Key Technical Decisions
 
-- **Module Federation** for runtime composition
-- **Microfrontend separation** for scalability
-- **Shared library** to avoid duplication
-- **Workspaces (monorepo)** for developer experience
-- **Single command execution** for simplicity
+### Module Federation
+
+Used to dynamically load remote modules at runtime and simulate independent applications.
+
+### Microfrontend Separation
+
+Each feature is isolated into its own application to reflect real-world architectural boundaries.
+
+### Shared UI Component
+
+A shared component ensures UI reuse across microfrontends without duplication.
+
+---
+
+## 🧩 Why This Project Is Intentionally Simple
+
+The UI and business logic in this project are intentionally minimal.
+
+The goal is not to build a feature-rich application, but to:
+
+- Isolate architectural concerns
+- Make microfrontend behavior easier to understand
+- Provide a clear and focused example of Module Federation
 
 ---
 
@@ -108,14 +130,21 @@ Key aspects:
 
 ---
 
+## 🎯 Purpose
+
+This project is designed as a learning and demonstration environment for microfrontend architecture.
+
+It focuses on understanding system composition rather than building a production-ready application.
+
+---
+
 ## 🧩 Why Microfrontends?
 
 This architecture enables:
 
-- Independent development and deployment
-- Better scalability across teams
+- Independent development
 - Clear separation of responsibilities
-- Reduced coupling between features
+- Modular system design
 
 ---
 
@@ -123,31 +152,19 @@ This architecture enables:
 
 Microfrontends introduce complexity:
 
-- Increased setup overhead
+- More setup and configuration
 - Coordination between applications
 - Runtime integration challenges
 
-This project explores those trade-offs in a controlled environment.
-
 ---
-
-## 🎯 Purpose
-
-This project is not intended to showcase UI/UX.
-
-It is designed to demonstrate:
-
-- Frontend architecture decisions
-- Modular system design
-- Real-world scalability patterns
 
 ## 🔗 Related Project
 
-If you're interested in UI/UX and visual polish, check out this related project where the same domain was explored with a stronger focus on interface design and user experience:
+If you're interested in UI/UX and visual polish, check out this related project:
 
 👉 https://rickandmortyexp.netlify.app/
 
-This project, instead, focuses on frontend architecture and system design.
+This project focuses instead on frontend architecture and system design.
 
 ---
 
